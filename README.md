@@ -1,7 +1,7 @@
 My docker hub:
 [https://hub.docker.com/u/kavinvin](https://hub.docker.com/u/kavinvin)
 
-[![Build Status](https://travis-ci.com/up1/workshop-depoy-microservice-java.svg?branch=master)](https://travis-ci.com/up1/workshop-depoy-microservice-java)
+[![Build Status](https://travis-ci.org/kavinvin/workshop-depoy-microservice-java.svg?branch=master)](https://travis-ci.org/kavinvin/workshop-depoy-microservice-java)
 
 # Demo :: Deploy microservices with Docker
 
