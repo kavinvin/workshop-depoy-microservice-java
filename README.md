@@ -1,4 +1,5 @@
-[My Docker Hub](https://hub.docker.com/u/kavinvin)
+My docker hub:
+[https://hub.docker.com/u/kavinvin](https://hub.docker.com/u/kavinvin)
 
 [![Build Status](https://travis-ci.com/up1/workshop-depoy-microservice-java.svg?branch=master)](https://travis-ci.com/up1/workshop-depoy-microservice-java)
 
