@@ -2,3 +2,23 @@ language: java
 jdk: oraclejdk8
 services:
   - docker
+cache:
+  directories:
+  - "$HOME/google-cloud-sdk/"
+jobs:
+  include:
+    - stage: build
+      script:
+        - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+        - source /home/travis/google-cloud-sdk/path.bash.inc
+        - gcloud --quiet version
+        - gcloud --quiet components update
+
+        - echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
+        - gcloud --quiet config set project kavinvin-211411
+        - gcloud auth configure-docker
+
+        - docker image build -t asia.gcr.io/kavinvin-211411/catalog_service:1.0 catalog/
+        - docker image build -t asia.gcr.io/kavinvin-211411/product_service:1.0 product/
+        - docker push asia.gcr.io/kavinvin-211411/catalog_service:1.0
+        - docker push asia.gcr.io/kavinvin-211411/product_service:1.0
